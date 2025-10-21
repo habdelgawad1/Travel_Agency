@@ -5,6 +5,6 @@ const {
 
 const TripRouter = express.Router();
 
-TripRouter
-    .route('/')
-    .get(retrieveAllTrips);
+TripRouter.route('/').get(retrieveAllTrips);
+
+module.exports = TripRouter;
