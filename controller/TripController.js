@@ -40,4 +40,14 @@ const CreateTrip = (req,res) => {
 trips.push(newTrip);
 }
 
-module.exports = {RetrieveAllTrips, CreateTrip};
+const DeleteTripById = (req,res) => {
+    const id = Number(req.params.id);
+    const index = trips.findIndex(trip => trip.id === id);
+    trips.splice(index, 1);
+    res.status(200).json({
+        status: 'success',
+        message: `Trip with id ${id} deleted successfully`
+    });
+}
+
+module.exports = {RetrieveAllTrips, CreateTrip, DeleteTripById};
