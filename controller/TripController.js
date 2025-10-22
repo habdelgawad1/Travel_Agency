@@ -50,4 +50,14 @@ const DeleteTripById = (req,res) => {
     });
 }
 
-module.exports = {RetrieveAllTrips, CreateTrip, DeleteTripById};
+const UpdateTripById = (req,res) => {
+    const id = Number(req.params.id);
+    const trip = trips.find(trip => trip.id === id);
+    Object.assign(trip, req.body);
+    res.status(200).json({
+        status: 'success',
+        message: `Trip with id ${id} updated successfully`,
+    });
+}
+
+module.exports = {RetrieveAllTrips, CreateTrip, DeleteTripById, UpdateTripById};

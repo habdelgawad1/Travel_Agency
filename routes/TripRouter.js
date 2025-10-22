@@ -2,7 +2,8 @@ const express = require('express');
 const {
     RetrieveAllTrips,
     CreateTrip,
-    DeleteTripById
+    DeleteTripById,
+    UpdateTripById
 } = require('../controller/TripController');
 
 const TripRouter = express.Router();
@@ -12,6 +13,7 @@ TripRouter.route('/')
 .post(CreateTrip);
 
 TripRouter.route('/:id')
-.delete(DeleteTripById);
+.delete(DeleteTripById)
+.put(UpdateTripById);
 
 module.exports = TripRouter;
