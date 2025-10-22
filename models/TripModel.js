@@ -48,13 +48,13 @@ const trips = [
         currencycode: 'AUD' },
 ];
 
-function getTripWithDailyCost() {
+function GetTripWithDailyCost() {
     for (let i = 0;i < trips.length;i++) {
         const trip = trips[i];
         trip.totalDailyCost = trip.hotelCost + trip.foodCost + trip.visacost + trip.flightCost;
     }
     return trips;
-}   
+}  
 
-module.exports = {getTripWithDailyCost, trips};
+module.exports = {GetTripWithDailyCost, trips};
         
