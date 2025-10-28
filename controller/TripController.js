@@ -1,5 +1,5 @@
 const { trips,GetTripWithDailyCost } = require("../models/TripModel")
-const { db } = require("../models/db,js");
+const { db } = require("../models/db.js");
 
 const RetrieveAllTrips = (req, res) => {
     const query = "SELECT * FROM Trip";
