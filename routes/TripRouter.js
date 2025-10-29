@@ -3,7 +3,8 @@ const {
     RetrieveAllTrips,
     CreateTrip,
     DeleteTripById,
-    UpdateTripById
+    UpdateTripById,
+    RetrieveTripById
 } = require('../controller/TripController');
 
 const TripRouter = express.Router();
@@ -13,6 +14,7 @@ TripRouter.route('/')
 .post(CreateTrip);
 
 TripRouter.route('/:id')
+.get(RetrieveTripById)
 .delete(DeleteTripById)
 .put(UpdateTripById);
 
